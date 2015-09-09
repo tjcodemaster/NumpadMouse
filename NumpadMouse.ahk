@@ -69,6 +69,8 @@ o------------------------------------------------------------o
 #SingleInstance force
 #MaxHotkeysPerInterval 500
 
+Menu, Tray, Icon, shell32.dll, 22
+
 ; Using the keyboard hook to implement the Numpad hotkeys prevents
 ; them from interfering with the generation of ANSI characters such
 ; as à.  This is because AutoHotkey generates such characters
@@ -553,7 +555,8 @@ else if Button = NumPadLeft
 	}
 
 	MouseCurrentSpeedToSide *= -1
-	MouseCurrentSpeedToDirection *= -1
+	MouseCurrentSpeedToDirection *= -1
+
 	MouseMove, %MouseCurrentSpeedToDirection%, %MouseCurrentSpeedToSide%, 0, R
 }
 else if Button = NumPadRight
